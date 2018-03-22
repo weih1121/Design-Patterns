@@ -16,6 +16,7 @@ class App:
             print("输的好惨，还继续吗？")
         else:
             print("赢了一点点，要不要挑战一百连胜？")
+            
     def run(self):
         lib_method = lib()
 
