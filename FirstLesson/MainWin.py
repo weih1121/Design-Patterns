@@ -24,7 +24,7 @@ class Rect:
         self.__Width          = width
         self.__Height         = height
 
-class Form:
+class Form:                                     #Form是一个抽象基类
     pass; 
 
 class MainForm(Form):
@@ -32,7 +32,7 @@ class MainForm(Form):
     __Point2
     __LineList
     __RectList
-    def __init__(self)
+    def __init__(self):
         super.__init__()
         pass
     
@@ -40,12 +40,22 @@ class MainForm(Form):
         #追踪鼠标动作
         self.__Point1.x = e.x
         self.__Point1.y = e.y
+        if (e.action() == drawLine)
+            self.__LineList.append(self.Point1)
+        elif (e.action() == drawRect):
+            self.__RectList.append(self.Point1)
+        else:
+            pass
         #...
         pass
 
     def OnMouseUp(self, e):
         self.__Point2.x = e.x
         self.__Point2.y = e.y
+        self.OnPaint()   #更新窗口操作
+
+
+    def OnPaint(self, e):
         if (e.action() == drawLine)
             self.drawLine(self.__Point1, self.__Point2)
         elif (e.action() == drawRect):
@@ -54,11 +64,6 @@ class MainForm(Form):
             self.drawRect(self.__Point1, width, height)
         else:
             pass
-        self.update()   #更新窗口操作
-        pass
-
-
-    def OnPaint(self, e):
         pass
 
     def drawLine(self, Point_start, Point_end):
